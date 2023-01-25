@@ -16,28 +16,32 @@
 - "start:prod": "node dist/main",
 
 ## Docker
-To build the image:
+Para construir a imagem:
 docker build -t codesh/guilherme .
 
-To run the container:
+Para iniciar o container:
 docker run -p 3000:3000 -it codesh/guilherme
 
 ## Dockerfile
-The Dockerfile uses two FROM statements to separate the build process from the final image. The first FROM runs the command npm run build and the second FROM copies only the generated build files, reducing the image size.
+O Dockerfile deste projeto foi configurado para criar dois contêineres: um para realizar o build da aplicação e outro para rodar apenas o build gerado, diminuindo assim o tamanho da imagem final.
 
 ## Environment Variables
-The following environment variables need to be set:
+As seguintes variáveis de ambiente precisam ser definidas:
 
+```
 PORT=3000
 NODE_ENV=development
-MONGODB_URI=mongodb+srv://username:password@localhost:1322/openfoodfacts
+MONGODB_URI=mongodb+srv://guilherme:franchin@cluster0.tzvicdv.mongodb.net/openfoodfacts
 DATABASE_USERNAME=root
 DATABASE_PASSWORD=root
 DATABASE_NAME=openfoodfacts
 CRON_INTERVAL=0 0 * * *
+```
+Certifique-se de ter as seguintes variáveis de ambiente definidas antes de executar a aplicação
+
 
 ## Database
-This project requires two collections in the database: "histories" and "products".
+Este projeto requer duas coleções no banco de dados: "histories" e "products".
 
 ## API documentation
-The API documentation is available at http://localhost:3000/api# when the application is running.
+A documentação API está disponível em http://localhost:3000/api# quando a aplicação está em execução.
