@@ -1,11 +1,25 @@
+<<<<<<< HEAD
+=======
+# compiled output
+/dist
+/node_modules
+package-lock.json
+.env
+
+>>>>>>> 8d7e1ac70af467bb8a7ce458739f5cb78e7f3abc
 # Logs
 logs
 *.log
 npm-debug.log*
+<<<<<<< HEAD
+=======
+pnpm-debug.log*
+>>>>>>> 8d7e1ac70af467bb8a7ce458739f5cb78e7f3abc
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+<<<<<<< HEAD
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
@@ -102,3 +116,27 @@ dist
 
 # TernJS port file
 .tern-port
+=======
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+>>>>>>> 8d7e1ac70af467bb8a7ce458739f5cb78e7f3abc
