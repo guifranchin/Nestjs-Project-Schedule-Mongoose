@@ -12,6 +12,7 @@ async function bootstrap() {
       ignoreTrailingSlash: true,
     }),
   );
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('Codesh')

@@ -1,12 +1,16 @@
-version: '3'
+version: "3"
 services:
-  mongodb:
-      image: mongo
-      ports:
-        - 27017:27017
-      volumes:
-        - ~/apps/mongo:/data/db
-      environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: root
-        MONGO_INITDB_DATABASE: openfoodfacts
+  app:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - local-network
+networks:
+  local-network:
+    driver:
+      bridge

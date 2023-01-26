@@ -17,10 +17,10 @@
 
 ## Docker
 Para construir a imagem:
-docker build -t codesh/guilherme .
+docker-compose build
 
 Para iniciar o container:
-docker run -p 3000:3000 -it codesh/guilherme
+docker-compose up
 
 ## Dockerfile
 O Dockerfile deste projeto foi configurado para criar dois contêineres: um para realizar o build da aplicação e outro para rodar apenas o build gerado, diminuindo assim o tamanho da imagem final.
@@ -31,7 +31,7 @@ As seguintes variáveis de ambiente precisam ser definidas:
 ```
 PORT=3000
 NODE_ENV=development
-MONGODB_URI=mongodb+srv://guilherme:franchin@cluster0.tzvicdv.mongodb.net/openfoodfacts
+MONGODB_URI=
 DATABASE_USERNAME=root
 DATABASE_PASSWORD=root
 DATABASE_NAME=openfoodfacts

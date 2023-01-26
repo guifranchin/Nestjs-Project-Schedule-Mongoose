@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { Product } from './entities/product.entity';
 import { ImportProductService } from './import-product.service';
 import { NotFoundError } from '../exceptions/not-found.exceptions';
+import { Cron } from '@nestjs/schedule';
 
 export interface ProductPagination {
   data: Product[];
@@ -54,7 +55,7 @@ export class ProductService {
     }
   }
 
-  // @Cron('* * * * * *')
+  @Cron('* * * * * *')
   async handleCron() {
     const data = await this.importProductService.importProduct();
     console.log(data);
